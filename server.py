@@ -9,4 +9,4 @@ def post(request):
 def get(request):
 	return "llbza server test"
 
-run_itty()
+run_itty(config='config')
