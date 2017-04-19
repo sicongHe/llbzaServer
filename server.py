@@ -1,6 +1,6 @@
 #coding=utf-8 
 from itty import *
-
+online = []
 @post('/')
 def post(request):
 	flag = request.POST.get("flag","not specified");
@@ -10,7 +10,12 @@ def post(request):
 		print name
 		print password
 		if (name == 'pony' and password == 'seed333333'):
-			return 'success'
+			online.append('pony')
+			return 'pony'
+		if (name == 'jb' and password == 'wocaonima'):
+			online.append('jb')
+			return 'jb'
+
 		else:
 			return 'fail'
 	else:
@@ -18,6 +23,9 @@ def post(request):
 	
 @get('/')
 def get(request):
-	return "llbza server test"
+	a = ''
+	for i in online:
+		a = a + i
+	return a
 
 run_itty(config='config')
