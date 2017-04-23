@@ -1,0 +1,29 @@
+{"name":"魔法飞弹","turns":"2","requirement":{"name":"None"},"effect":{"name":"changeHealth","del":-3},"buff":{"name":"None"}}
+
+requirement:
+
+name必选 条件可以有多个组合起来
+	若None 则直接表示无条件可释放
+	若fowardCard 则需要加一个 "forwardCard"项 注明名称
+	若healthHighThan 则加一个"line"数字
+	若healthLowThan 则加一个"line"数字
+	若healthEqual 则加一个"line"数字
+	若checkEnemyState 则加一个"state"
+	若checkEnemyCardbook 则加一个"cardname"
+	若checkMy XXXX 同上
+	其他属性同理
+	cardbookNumber同上
+symbol必选 
+	若 iron 则不需满足
+	若 water 则可选
+	若 shit 则必须不满足
+effect:
+name必选
+	若None 无效果
+	若resist 反制
+	若changeHealth 则加一个"delta" 数字
+	其他属性同理
+	changeEnemyState 则加一个"state"
+	changeEnemyCardlineState 则加一个"state"
+	changeEnemyCardbook 则嵌套一个json 需要:"cardname" "opreation" "changeNumber"
+	changeMy同上
