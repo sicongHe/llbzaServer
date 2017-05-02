@@ -1,4 +1,7 @@
 #coding=utf-8 
+#author: sicongHe
+#LLBZA ENTERTAINMENT
+#llbza server
 from itty import *
 import json
 online = []
